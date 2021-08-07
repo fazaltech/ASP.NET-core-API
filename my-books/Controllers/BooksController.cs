@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using my_books.Data.Services;
+using my_books.Data.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +13,20 @@ namespace my_books.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
+
+        public BookServices _bookService;
+
+        public BooksController(BookServices booksServices)
+        {
+            _bookService = booksServices;
+        }
+
+        [HttpPost("add-book")]
+
+        public IActionResult AddBook([FromBody] BookVM book) 
+        {
+            _bookService.AddBook(book);
+            return Ok();
+        }
     }
 }
