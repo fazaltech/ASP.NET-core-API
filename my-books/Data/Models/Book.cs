@@ -27,5 +27,10 @@ namespace my_books.Data.Models
 
         public DateTime DateAdded { get; set; }
 
+        //Navigation Properties
+        public int PublisherId { get; set; }
+
+        public Publisher Publisher { get; set; }
+
     }
 }
