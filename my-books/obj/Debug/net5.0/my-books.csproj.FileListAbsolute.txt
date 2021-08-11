@@ -11,7 +11,6 @@ C:\Users\Fazal\source\repos\my-books\my-books\bin\Debug\net5.0\Microsoft.OpenApi
 C:\Users\Fazal\source\repos\my-books\my-books\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Fazal\source\repos\my-books\my-books\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Fazal\source\repos\my-books\my-books\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.csproj.AssemblyReference.cache
 C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.AssemblyInfoInputs.cache
 C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.AssemblyInfo.cs

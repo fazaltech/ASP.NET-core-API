@@ -14,9 +14,9 @@ namespace my_books.Controllers
     public class BooksController : ControllerBase
     {
 
-        public BookServices _bookService;
+        public BooksService _bookService;
 
-        public BooksController(BookServices booksServices)
+        public BooksController(BooksService booksServices)
         {
             _bookService = booksServices;
         }

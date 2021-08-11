@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace my_books.Data.Services
 {
-    public class BookServices
+    public class BooksService
     {
         private AppDbContext _context;
 
-        public BookServices(AppDbContext context) 
+        public BooksService(AppDbContext context) 
         {
             _context = context;
         }
