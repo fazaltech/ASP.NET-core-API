@@ -32,5 +32,7 @@ namespace my_books.Data.Models
 
         public Publisher Publisher { get; set; }
 
+        public List<Book_Author> Book_Authors { get; set; }
+
     }
 }
