@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using my_books.Data.Services;
 using my_books.Data.ViewModels;
+using my_books.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,13 +26,18 @@ namespace my_books.Controllers
 
 
         [HttpPost("add-publisher")]
-        public IActionResult AddBook([FromBody] PublisherVM publisher)
+        public IActionResult AddPublisher([FromBody] PublisherVM publisher)
         {
             try
             {
                 var newPublisher = _publisherService.AddPublisher(publisher);
-                return Created(nameof(AddBook), newPublisher);
+                return Created(nameof(AddPublisher), newPublisher);
 
+            }
+
+            catch (PublisherNameException ex) 
+            {
+                return BadRequest($"{ex.Message}, Publisher name: {ex.PublisherName}");
             }
             catch (Exception ex)
             {
