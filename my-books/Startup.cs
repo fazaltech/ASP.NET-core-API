@@ -69,6 +69,7 @@ namespace my_books
 
             //Exception Handling
             app.ConfigureBuildInExceptionHanlder();
+            //app.ConfigureCustomInExceptionHanlder();
 
             app.UseEndpoints(endpoints =>
             {

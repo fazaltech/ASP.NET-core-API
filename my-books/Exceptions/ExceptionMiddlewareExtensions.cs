@@ -41,5 +41,11 @@ namespace my_books.Exceptions
 
             });
         }
+
+
+        public static void ConfigureCustomInExceptionHanlder(this IApplicationBuilder app) 
+        {
+            app.UseMiddleware<CustomExceptionMiddleware>();
+        }
     }
 }
