@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using my_books.ActionResults;
 using my_books.Data.Models;
 using my_books.Data.Services;
 using my_books.Data.ViewModels;
@@ -50,7 +51,7 @@ namespace my_books.Controllers
 
 
         [HttpGet("get-publisher-by-id/{id}")]
-        public ActionResult<Publisher> GetPublisherById(int id)
+        public IActionResult GetPublisherById(int id)
         {
             
 
@@ -58,15 +59,14 @@ namespace my_books.Controllers
 
             if (_respone != null)
             {
-                // return Ok(_respone);
-             
-              return _respone;
-                
+                return Ok(_respone);
+
+               
             }
             else 
             {
-                   return NotFound();
 
+                return NotFound();
                 
             }
      
