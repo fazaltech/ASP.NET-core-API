@@ -50,7 +50,7 @@ namespace my_books.Controllers
 
 
         [HttpGet("get-publisher-by-id/{id}")]
-        public Publisher GetPublisherById(int id)
+        public IActionResult GetPublisherById(int id)
         {
             
 
@@ -58,13 +58,13 @@ namespace my_books.Controllers
 
             if (_respone != null)
             {
-                //return Ok(_respone);
-                return _respone;
+                return Ok(_respone);
+                
             }
             else 
             {
-                // return NotFound();
-                return null;
+                return NotFound();
+                
             }
      
 
