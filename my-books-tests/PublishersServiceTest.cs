@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using my_books.Data;
 using my_books.Data.Models;
+using my_books.Data.Services;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace my_books_tests
 {
@@ -14,6 +16,7 @@ namespace my_books_tests
             .Options;
 
         AppDbContext context;
+        PublishersService publishersService;
 
         [OneTimeSetUp]
         public void Setup()
@@ -22,6 +25,49 @@ namespace my_books_tests
             context.Database.EnsureCreated();
 
             SeedDatabase();
+            publishersService = new PublishersService(context);
+        }
+
+        [Test,Order(1)]
+        public void GetAllPublisher_WithNoSortBy_WithNoSearchString_WithNoPageNumber() 
+        {
+            var result = publishersService.GetAllPublishers("", "", null);
+
+            Assert.That(result.Count, Is.EqualTo(5));
+        
+        
+        }
+
+        [Test, Order(2)]
+        public void GetAllPublisher_WithNoSortBy_WithNoSearchString_WithPageNumber()
+        {
+            var result = publishersService.GetAllPublishers("", "", 2);
+
+            Assert.That(result.Count, Is.EqualTo(5));
+           
+
+        }
+
+        [Test, Order(3)]
+        public void GetAllPublisher_WithNoSortBy_WithSearchString_WithNoPageNumber()
+        {
+            var result = publishersService.GetAllPublishers("", "3", null);
+
+            Assert.That(result.Count, Is.EqualTo(1));
+            Assert.That(result.FirstOrDefault().Name, Is.EqualTo("Publisher 3"));
+
+
+        }
+
+        [Test, Order(4)]
+        public void GetAllPublisher_WithSortBy_WithNoSearchString_WithNoPageNumber()
+        {
+            var result = publishersService.GetAllPublishers("name_desc", "", null);
+
+            Assert.That(result.Count, Is.EqualTo(5));
+            Assert.That(result.FirstOrDefault().Name, Is.EqualTo("Publisher 6"));
+
+
         }
 
         [OneTimeTearDown]
