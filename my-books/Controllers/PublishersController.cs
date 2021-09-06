@@ -32,7 +32,7 @@ namespace my_books.Controllers
         public IActionResult GetAllPublishers(string sortBy,string searchString, int pageNumber) 
         {
 
-            throw new Exception("This is an exception thrown from GetAllPublishers()");
+  
             try
             {
                 _logger.LogInformation("This is just a log in GetAllPublisher()");
