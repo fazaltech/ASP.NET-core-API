@@ -117,7 +117,18 @@ namespace my_books_tests
             Assert.That(result.Name, Does.StartWith("Without"));
             Assert.That(result.Id, Is.Not.Null);
         }
+        [Test, Order(9)]
+        public void GetPublisherData() 
+        {
+            var result = publishersService.GetPublisherData(1);
 
+            Assert.That(result.Name, Is.EqualTo("Publisher 1"));
+            Assert.That(result.BookAuthors, Is.Not.Empty);
+            Assert.That(result.BookAuthors.Count, Is.GreaterThan(0));
+
+            var firstBookName = result.BookAuthors.OrderBy(n => n.BookName).FirstOrDefault().BookName;
+            Assert.That(firstBookName, Is.EqualTo("Book 1 Title"));
+        }
 
         [OneTimeTearDown]
         public void CleanUp()
