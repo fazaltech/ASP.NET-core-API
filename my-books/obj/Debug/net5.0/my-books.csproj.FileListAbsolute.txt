@@ -74,3 +74,4 @@ C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.dll
 C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\ref\my-books.dll
 C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.pdb
 C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.genruntimeconfig.cache
+C:\Users\Fazal\source\repos\my-books\my-books\obj\Debug\net5.0\my-books.csproj.AssemblyReference.cache

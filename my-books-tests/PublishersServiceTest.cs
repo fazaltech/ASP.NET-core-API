@@ -45,7 +45,7 @@ namespace my_books_tests
         {
             var result = publishersService.GetAllPublishers("", "", 2);
 
-            Assert.That(result.Count, Is.EqualTo(5));
+            Assert.That(result.Count, Is.EqualTo(1));
            
 
         }
